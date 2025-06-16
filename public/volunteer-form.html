@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="box">
+            <a href="index.html" class="title">Pet Shop</a>
+            <div class="navi">
+                <a href="index.html" class="nav">Home</a>
+                <a href="about.html" class="nav">About</a>
+                <a href="services.html" class="nav">Services</a>
+                <a href="index.html#contact" class="nav">Contact</a>
+            </div>
+            <a href="login.html" class="login">Login</a>
+        </div>
+    </header>
+
+    <section class="form-section">
+        <form class="form-card" method="POST" action="server.php">
+            <h2>Join Our Volunteer Team</h2>
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="availability">Availability:</label>
+            <textarea id="availability" name="availability" rows="4" placeholder="Days and hours you're available" required></textarea>
+
+            <label for="skills">Skills/Experience:</label>
+            <textarea id="skills" name="skills" rows="4"></textarea>
+
+            <button type="submit" name="volunteer">Submit</button>
+        </form>
+    </section>
+</body>
+</html>

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ultimate Pet Shop</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f7f7f7;
+        }
+        h1, h2, h3, p {
+            margin: 0;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+        }
+        header .logo {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 10px;
+            padding: 30px;
+            cursor: pointer;
+        }
+        header .logo img {
+            width: 50px;
+            height: 50px;
+        }
+        header nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        header .nav-links a {
+            margin: 20px;
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-decoration: underline 2px solid #ffffff;
+            text-underline-offset: 3px;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        header .nav-links a:hover {
+            background-color: #3E8E41;
+            text-decoration: underline 2px solid #000;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url('./Img/home-banner-07-1150x335.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 15px;
+            height: 400px;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            padding-top: 150px;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            color: #f7f7f7;
+            margin-bottom: 20px;
+        }
+        .hero button {
+            background-color: #FFD700;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.4rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .hero button:hover {
+            background-color: #FFC107;
+        }
+
+        /* About Section */
+        #about {
+            padding: 20px;
+            text-align: center;
+        }
+        #about h2 {
+            color: #000;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        #about p {
+            color: #555;
+            font-size: 1.23rem;
+            text-align: justify;
+            width: 80%;
+            margin-left: 10%;
+            margin-top: 2%;
+            margin-bottom: 2%;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            color: #000;
+            padding: 40px 20px;
+            text-align: center;
+            height: 250px;
+        }
+
+        .testimonials h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .testimonial-bg {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .testimonial {
+            background-color: #333;
+            color: #ffffffdd;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            height: 100px;
+            font-size: 1.1rem;
+            text-align: left;
+        }
+
+        /* Review Section */
+        .reviews {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .reviews h2{
+            font-size: 35px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .happy-clients {
+            text-align: center;
+            background-color: #4CAF50;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            width: 20%;
+            padding: 10px;
+            margin: 10px auto;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .happy-clients h3 {
+            font-size: 28px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .review-box {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        .review-box h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+
+        .review-box p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .review-box span {
+            font-size: 16px;
+            color: #777;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 20px;
+            text-align: center;
+        }
+        .services h2 {
+            color: #000;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        .services p {
+            color: #555;
+            font-size: 1.23rem;
+            width: 80%;
+            margin-left: 10%;
+            margin-top: 2%;
+            margin-bottom: 2%;
+        }
+        .services .service-cards {
+            display: flex;
+            justify-content: space-around;
+            gap: 15px;
+        }
+        .services .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            margin: 10px;
+        }
+        .services .card h3 {
+            color: #333;
+        }
+        .services a {
+            background-color: #FFD700;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.4rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .services a:hover {
+            background-color: #FFC107;
+            color: #fff;
+        }
+
+        /* Contact Form */
+        .contact-form{
+            padding: 20px;
+            text-align: center;
+        }
+        .contact-form h2 {
+            color: #000;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        .contact-form p {
+            color: #555;
+            font-size: 1.23rem;
+            width: 80%;
+            margin-left: 10%;
+            margin-top: 2%;
+            margin-bottom: 2%;
+        }
+        .contactForm {
+            width: 600px;
+            margin: 0 auto;
+            padding: 50px;
+            background-color: hsl(262, 88%, 16%);
+            color: #f8f32b;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .contactForm label{
+            color: #fff;
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+        .contactForm input[type="text"],
+        .contactForm input[type="email"],
+        .contactForm textarea {
+            width: 80%;
+            height: 30px;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contactForm button {
+            width: 30%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">The Ultimate Pet Shop <img src="./Img/cat-dog-paw-icon-zoo-600nw-2478312527-removebg-preview.png" alt="logo"></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Our Services</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Caring for Animals, Together</h1>
+        <p>Join us in making a difference for pets in need. Connect with our services today!</p>
+        <button onclick="window.location.href='services.html'">Explore Services</button>
+    </section>
+
+    <section class="testimonials">
+        <h2>WHAT OUR USERS SAY</h2>
+        <div class="testimonial-bg">
+        <div class="testimonial">
+            <p>"Rentor made finding my new apartment a breeze. The process was straightforward and efficient!"</p>
+            <cite>- Sarah J.</cite>
+        </div>
+        <div class="testimonial">
+            <p>"A fantastic platform with excellent customer support. Highly recommend Rentor to anyone looking for a rental."</p>
+            <cite>- Mark T.</cite>
+        </div>
+        <div class="testimonial">
+            <p>"A fantastic platform with excellent customer support. Highly recommend Rentor to anyone looking for a rental."</p>
+            <cite>- Mark T.</cite>
+        </div>
+        <div class="testimonial">
+            <p>"A fantastic platform with excellent customer support. Highly recommend Rentor to anyone looking for a rental."</p>
+            <cite>- Mark T.</cite>
+        </div>
+        <div class="testimonial">
+            <p>"A fantastic platform with excellent customer support. Highly recommend Rentor to anyone looking for a rental."</p>
+            <cite>- Mark T.</cite>
+        </div>
+        </div>
+    </section>
+
+    <!-- Review Section -->
+    <section id="review-section" class="reviews">
+        <h2>Customer Reviews</h2>
+
+        <div class="happy-clients">
+            <h3>Happy Clients: <span id="happy-client-count">0</span>+</h3>
+        </div>
+
+        <div id="review-container">
+            <!-- Reviews will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>
+            We at <b>The Ultimate Pet Shop</b> are dedicated to improving the lives of animals and fostering a compassionate connection between pets and humans. 
+            Our mission is not to sell products but to provide essential services for pet care and welfare. 
+            Whether it’s finding loving homes for abandoned pets, offering medical assistance to those in need, or empowering individuals to become active contributors through volunteering, we work tirelessly to make a difference.
+        <br><br>
+            Through our streamlined process and dedicated team, we ensure every pet receives the care, attention, and support they deserve. 
+            By leveraging modern tools and connecting with passionate individuals like you, we aim to create a community that truly cares for animals.
+            From adoption services to emergency medical care and volunteer opportunities, <b>The Ultimate Pet Shop</b> is here to inspire change and support pets in need. 
+            Join us in our mission to create a better world for animals!
+        </p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-cards">
+            <div class="card">
+                <h3>Adoption Services</h3>
+                <p>Help pets find their forever homes with our reliable adoption process.</p>
+                <br>
+                <a href="">Book Appointment</a>
+            </div>
+            <div class="card">
+                <h3>Medical Assistance</h3>
+                <p>Providing essential medical care to injured or abandoned pets.</p>
+                <br>
+                <a href="">Book Appointment</a>
+            </div>
+            <div class="card">
+                <h3>Volunteer Opportunities</h3>
+                <p>Join our community to make a difference in the lives of animals.</p>
+                <br>
+                <a href="">Register for volunteering</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-form" id="contact">
+        <h2>Contact Us</h2>
+        <form action="/contact" id="contactForm" class="contactForm" method="post">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" class="message" name="message" required></textarea><br><br>
+            <button type="submit">Send Message</button>
+        </form>            
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 The Ultimate Pet Shop. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to fetch reviews from the server
+        function fetchReviews() {
+            fetch('http://localhost:3001/reviews')
+                .then(response => response.json())
+                .then(data => {
+                    displayReviews(data);
+                })
+                .catch(error => {
+                    console.error('Error fetching reviews:', error);
+                });
+        }
+    
+        // Function to display reviews on the webpage
+        function displayReviews(reviews) {
+            const reviewContainer = document.getElementById('review-container');
+    
+            // Clear any existing reviews
+            reviewContainer.innerHTML = '';
+    
+            // Loop through the reviews and create HTML elements
+            reviews.forEach(review => {
+                const reviewBox = document.createElement('div');
+                reviewBox.classList.add('review-box');
+    
+                // Assuming your reviews table has columns like `name`, `review`, and `rating`
+                reviewBox.innerHTML = `
+                    <h3>${review.name}</h3>
+                    <p>${review.review}</p>
+                    <span>Rating: ${review.rating}/5</span>
+                `;
+    
+                reviewContainer.appendChild(reviewBox);
+            });
+        }
+
+        // Function to animate the happy clients counter
+        function animateCount(target, duration) {
+            const element = document.getElementById('happy-client-count');
+            let start = 0;
+            const end = target;  // The number to count up to
+            const increment = end > 0 ? Math.ceil(end / (duration / 16)) : 0;
+    
+            function updateCount() {
+                start += increment;
+    
+                if (start >= end) {
+                    element.textContent = end;  // Ensure the final value is set
+                } else {
+                    element.textContent = start;
+                    requestAnimationFrame(updateCount);
+                }
+            }
+    
+            updateCount();
+        }
+
+        // Combined onload event to handle both fetching reviews and animating the counter
+        window.onload = function() {
+            // Fetch and display reviews
+            fetchReviews();
+    
+            // Animate the happy clients count to 100
+            animateCount(1000, 2000);  // Count from 1 to 100 in 2 seconds
+        };
+    </script>
+</body>
+</html>

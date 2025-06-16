@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Assistance Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="box">
+            <a href="index.html" class="title">Pet Shop</a>
+            <div class="navi">
+                <a href="index.html" class="nav">Home</a>
+                <a href="about.html" class="nav">About</a>
+                <a href="services.html" class="nav">Services</a>
+                <a href="index.html#contact" class="nav">Contact</a>
+            </div>
+            <a href="login.html" class="login">Login</a>
+        </div>
+    </header>
+
+    <section class="form-section">
+        <form class="form-card" method="POST" action="server.php">
+            <h2>Request Medical Assistance</h2>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="pet-details">Pet Details:</label>
+            <textarea id="pet-details" name="pet-details" rows="4" placeholder="Type, breed, age, etc." required></textarea>
+
+            <label for="urgency">Is it an emergency?</label>
+            <select id="urgency" name="urgency">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <button type="submit" name="medical">Submit</button>
+        </form>
+    </section>
+</body>
+</html>
